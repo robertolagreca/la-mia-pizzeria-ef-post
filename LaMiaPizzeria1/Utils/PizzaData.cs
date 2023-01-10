@@ -6,7 +6,7 @@ namespace LaMiaPizzeriaModel.Utils
     //La lista di pizze sono oggetti di tipo pizza della classe Pizza
     public static class PizzaData
     {
-        private static List<Pizza> pizzas;
+      /*  private static List<Pizza> pizzas;
 
         public static List<Pizza> GetPizzas()
         {
@@ -29,6 +29,6 @@ namespace LaMiaPizzeriaModel.Utils
             
             return pizzas; 
 
-        }
+        } */
     }
 }

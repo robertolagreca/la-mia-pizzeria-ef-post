@@ -1,8 +1,12 @@
 ﻿@using LaMiaPizzeriaModel.Models;
+
 @model Pizza
+@{
+    Layout = "_LayoutPersonal";
+}
 
 <div class="container">
-    <form asp-controller="Post" asp-action="Create" method="post">
+    <form asp-controller="Pizza" asp-action="Create" method="pizza">
         @Html.AntiForgeryToken()
 
         <div class="mb-3 form-check">
@@ -10,7 +14,7 @@
             <input asp-for="Image" type="text" class="form-control" />
         </div>
         <div class="mb-3">
-            <label>Titolo:</label>
+            <label>Nome:</label>
             <input asp-for="Name" type="text" class="form-control"/>
         </div>
         <div class="mb-3">
@@ -23,7 +27,14 @@
             <input asp-for="Price" type="text" class="form-control" />
         </div>
 
-        <button type="submit" class="btn btn-primary">Salva</button>
+        <!--NOTA rispetto alle slide e live coding di Bryan ho dovuto aggiungere
+            in button la proprietà formethod e specificare post, soluzione trovata su SLACK.
+            Senza attraverso il debug ho notato che non mi legge HttpPost di Create'
+        -->
+        <div class="d-grid justify-content-end">
+        <button type="submit" class="btn btn-primary btn-danger" formmethod="post">Salva</button>
+        </div>
 
+        <!-- TROVATO SU SLACK <button id="Button" type="submit" name="submit" formmethod="post" class="btn btn-secondary btn-sm btn-danger">Save</button> -->
     </form>
 </div>

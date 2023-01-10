@@ -3,6 +3,7 @@ using LaMiaPizzeriaModel.Models;
 using LaMiaPizzeriaModel.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Identity.Client;
 
 namespace LaMiaPizzeriaModel.Controllers
 {
@@ -37,6 +38,12 @@ namespace LaMiaPizzeriaModel.Controllers
             
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View("Create");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Pizza formData)
@@ -52,7 +59,7 @@ namespace LaMiaPizzeriaModel.Controllers
                 db.SaveChanges();
             }
 
-            return RedirectToAction("index");
+            return RedirectToAction("Index");
         }
 
     }
