@@ -17,10 +17,10 @@ namespace LaMiaPizzeriaModel.Utils
 
              pizzas = new List<Pizza>();
             //su HTML va bene la tilde, su CS e CSS invece solo lo slash e lo legge.
-              Pizza pizza1 = new Pizza(1, "/img/fernando-andrade-_P76trHTWDE-unsplash.jpg", "Margherita", "Sugo, mozzarella", 4.99f);
-              Pizza pizza2 = new Pizza(2, "/img/fernando-andrade-_P76trHTWDE-unsplash.jpg", "Wusterl", "Sugo, mozzarella, wusterl", 5.99f);
-              Pizza pizza3 = new Pizza(3, "/img/fernando-andrade-_P76trHTWDE-unsplash.jpg", "Americana", "Sugo, mozzarella, wusterl, patatine", 6.99f);
-              Pizza pizza4 = new Pizza(4, "/img/fernando-andrade-_P76trHTWDE-unsplash.jpg", "Salamino", "Sugo, mozzarella, salamino piccante", 5.99f); 
+              Pizza pizza1 = new Pizza("/img/fernando-andrade-_P76trHTWDE-unsplash.jpg", "Margherita", "Sugo, mozzarella", 4.99f);
+              Pizza pizza2 = new Pizza("/img/fernando-andrade-_P76trHTWDE-unsplash.jpg", "Wusterl", "Sugo, mozzarella, wusterl", 5.99f);
+              Pizza pizza3 = new Pizza("/img/fernando-andrade-_P76trHTWDE-unsplash.jpg", "Americana", "Sugo, mozzarella, wusterl, patatine", 6.99f);
+              Pizza pizza4 = new Pizza("/img/fernando-andrade-_P76trHTWDE-unsplash.jpg", "Salamino", "Sugo, mozzarella, salamino piccante", 5.99f); 
 
               pizzas.Add(pizza1);
               pizzas.Add(pizza2);

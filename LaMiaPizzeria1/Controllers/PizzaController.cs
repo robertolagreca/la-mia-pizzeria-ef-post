@@ -19,17 +19,22 @@ namespace LaMiaPizzeriaModel.Controllers
 
         public IActionResult Details(int id)
         {
-            List<Pizza> listPizzas = PizzaData.GetPizzas();
-
-            foreach (Pizza pizza in listPizzas)
+            using (PizzaContext db = new PizzaContext())
             {
-                if (pizza.Id == id)
-                {
-                    return View(pizza);
-                }
-            }
+                Pizza pizzaFound = db.Pizzas
+                    .Where(PizzaNelDb => PizzaNelDb.Id == id)
+                    .FirstOrDefault();
 
-            return NotFound("La pizza non esiste!");
+                if (pizzaFound != null)
+                {
+                    return View(pizzaFound);
+                }
+
+
+                return NotFound("La pizza non esiste!");
+            }
+                
+            
         }
 
     }
