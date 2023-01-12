@@ -6,25 +6,29 @@
 }
 
 <div class="container">
-    <form asp-controller="Pizza" asp-action="Create" method="pizza">
+    <form asp-controller="Pizza" asp-action="Create" method="post">
         @Html.AntiForgeryToken()
 
         <div class="mb-3 form-check">
             <label>Path Immagine:</label>
             <input asp-for="Image" type="text" class="form-control" />
+            <span asp-validation-for="Image" class="text-danger"></span>
         </div>
         <div class="mb-3 form-check">
             <label>Nome:</label>
             <input asp-for="Name" type="text" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="mb-3 form-check">
             <label>Descrizione:</label>
             <textarea asp-for="Description" rows="10" class="d-block w-100"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         
         <div class="mb-3 form-check">
             <label>Prezzo:</label>
             <input asp-for="Price" type="text" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
         </div>
 
         <!--NOTA rispetto alle slide e live coding di Bryan ho dovuto aggiungere
