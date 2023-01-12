@@ -38,12 +38,15 @@ namespace LaMiaPizzeriaModel.Controllers
             
         }
 
+        // METODO GET
         [HttpGet]
         public IActionResult Create()
         {
             return View("Create");
         }
 
+
+        // METODO POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Pizza formData)
@@ -61,6 +64,26 @@ namespace LaMiaPizzeriaModel.Controllers
 
             return RedirectToAction("Index");
         }
+
+        // METODO PUT (GET + POST)
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            using (PizzaContext db = new PizzaContext())
+            {
+                Pizza pizzaToModify = db.Pizzas.Where(pizza => pizza.Id == id).FirstOrDefault();
+
+                if (pizzaToModify == null)
+                {
+                    return NotFound("La pizza non è stata trovata");
+                }
+
+                return View("Update", pizzaToModify);
+            }
+            
+        }
+
 
     }
 }
