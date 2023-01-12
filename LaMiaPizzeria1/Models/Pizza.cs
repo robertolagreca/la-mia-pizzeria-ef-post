@@ -18,7 +18,7 @@ namespace LaMiaPizzeriaModel.Models
 
         [Column(TypeName = "varchar(30)")]
         [Required(ErrorMessage = "Il campo è obbligatorio")]
-        [StringLength(300, ErrorMessage = "Non puoi andare oltre i 100 caratteri")]
+       [StringLength(300, ErrorMessage = "Non puoi andare oltre i 100 caratteri")]
         public string Name { get; set; }
 
         [Column(TypeName = "text")]
@@ -27,7 +27,6 @@ namespace LaMiaPizzeriaModel.Models
 
         [Column(TypeName = "float(2)")]
         [Required(ErrorMessage = "Il campo è obbligatorio")]
-        [StringLength(5, ErrorMessage = "Non puoi andare oltre i 5 caratteri")]
         public float Price { get; set; }
 
         //Costruttore pizza vuoto utile per quanto si lavora con DB
